@@ -2,44 +2,100 @@
 Class: CIT 95
 Name: Mark Edmunds
 Assignment: GitHub classroom program two
+August 31, 2023
 """
-text = "Python is an amazing programming language. It is versatile, easy to learn, and powerful."
+
+TEXT = "Python is an amazing programming language. It is versatile, easy to learn, and powerful."
+
+
 # Strings
-# TODO: write a function that take a string and returns the number of character in the string
+# Length Calculation
+def calculate_length(text: str):
+    print(f"The number of characters ins the string is: {len(text)}")
+    return len(text)
 
-# TODO: write code that returns text to uppercase followed by lowercase
 
-# TODO: write code that returns that word count of text
+calculate_length(TEXT)
+# Uppercase and Lowercase Conversion
+upper_lower = f"{TEXT.upper()} {TEXT.lower()}"
+print(upper_lower)
+# Word Count
+word_count = len((TEXT.split()))
+print(word_count)
+# Substring Extraction:
+string_length = len(TEXT)
+start = int(input("Enter starting index: "))
+end = int(input("Enter ending index: "))
+if start < end and end <= string_length - 1:
+    print(TEXT[start:end: 1])
+elif start > end and start <= string_length - 1:
+    print(TEXT[start:end: -1])
+else:
+    print("out of range")
+# Word Replacement
+word_to_replace = input("What word would you like to replace?: ")
+replacement_word = input(f"What would you like to replace '{word_to_replace}' with?: ")
+print(TEXT.replace(word_to_replace, replacement_word))
 
-# TODO: write code that replaces a user chosen word with another user chosen word in the text string
+# Whitespace Removal
+print(TEXT.strip())
 
-# TODO: remove all leading and trailing white space in text
 
-# TODO: write a function that takes a string and returns a list with the sentences contained in the string.
+# Splitting into Sentences
+def split_sentences(text):
+    sentence_list = text.split(".")
+    sentence_list.remove("")
+    return sentence_list
 
-# TODO: write code that reverse each word of text
 
-# TODO: write python code that take a character and returns the number of occurrences of it in text
+print(split_sentences(TEXT))
+# Word Reversal
+for word in TEXT.split():
+    newWord = word.replace(",", "")
+    newWord = newWord.replace(".", "")
+    print(newWord[::-1])
 
-# TODO: write python code that take a substring and returns the number of occurrences of it in text
+# Character Count
+character_count = input("What character do you want to count?: ")
+while len(character_count) > 1:
+    character_count = input("Enter 1 character")
+print(TEXT.count(character_count))
+# Substring Count
+sub_string = input("What substring do you want to count: ")
+print(TEXT.count(sub_string))
+
 # Lists
-# TODO: create a list called word_list which has each word in text
+# List Creation
+word_list = TEXT.split()
+print(word_list)
+# Appending
+word_list.append("Pythonic")
+print(word_list)
+# Insertion
+word_list.insert(0, "awesome")
+print(word_list)
+# Indexing and Slicing
+print(word_list[2])
+print(word_list[5:8:1])
+# Removal
+word_list.remove("amazing")
+print(word_list)
+# Sorting
+sorted_list = word_list.copy()
+sorted_list.sort(key=str.lower)
+print(sorted_list)
 
-# TODO: append the word 'Pythonic' to word_list
-
-# TODO: insert the word 'awesome' to the  beginning of word_list
-
-# TODO: print the third word in the word_list and then print a sublist containing the words from the 6th to 9th position.
-
-# TODO: remove the word "amazing" from the word_list
-
-# TODO: Sort the word_list in alphabetical order.
-
-# TODO: count the occurrences of the word "is" in the word_list
-
-# TODO: create a string sentence by joining the words in the word_list with spaces
-
-# TODO: reverse the order of elements in the word_list
-
-# TODO: create a new list copied_list by copying the contents of the word_list
-
+# Counting
+print(word_list.count("is"))
+# Joining
+new_sentence = ""
+print(word_list)
+for word in word_list:
+    print(word)
+    new_sentence += f" {word}"
+print(new_sentence)
+# Reversal
+word_list.reverse()
+# Copying
+new_list = word_list.copy()
+print(new_list)
